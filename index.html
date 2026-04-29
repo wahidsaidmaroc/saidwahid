@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Said Wahid — Portfolio</title>
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Police Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            ink: {
+              50:  '#f8fafc',
+              100: '#f1f5f9',
+              200: '#e2e8f0',
+              500: '#64748b',
+              700: '#334155',
+              900: '#0f172a'
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: -4px;
+      width: 0; height: 1px;
+      background: currentColor;
+      transition: width .3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+  </style>
+</head>
+<body class="bg-white text-ink-900 antialiased">
+
+  <!-- ===== Header ===== -->
+  <header id="header" class="fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur border-b border-ink-100 transition-shadow">
+    <nav class="max-w-5xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="#home" class="text-lg font-semibold tracking-tight">
+        Said<span class="text-ink-500">.</span>Wahid
+      </a>
+      <ul class="hidden md:flex items-center gap-8 text-sm text-ink-700">
+        <li><a href="#about"    class="nav-link">À propos</a></li>
+        <li><a href="#skills"   class="nav-link">Compétences</a></li>
+        <li><a href="#projects" class="nav-link">Projets</a></li>
+        <li><a href="#contact"  class="nav-link">Contact</a></li>
+      </ul>
+      <a href="#contact" class="hidden md:inline-block text-sm font-medium px-4 py-2 rounded-full bg-ink-900 text-white hover:bg-ink-700 transition">
+        Me contacter
+      </a>
+      <button id="menuToggle" class="md:hidden p-2" aria-label="Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+    </nav>
+    <div id="mobileMenu" class="hidden md:hidden border-t border-ink-100 bg-white">
+      <ul class="flex flex-col px-6 py-4 gap-4 text-ink-700">
+        <li><a href="#about"    class="block py-1">À propos</a></li>
+        <li><a href="#skills"   class="block py-1">Compétences</a></li>
+        <li><a href="#projects" class="block py-1">Projets</a></li>
+        <li><a href="#contact"  class="block py-1">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section id="home" class="min-h-screen flex items-center pt-24 pb-16">
+    <div class="max-w-5xl mx-auto px-6 w-full">
+      <p class="text-sm uppercase tracking-[0.2em] text-ink-500 mb-6">Portfolio</p>
+      <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.05]">
+        Said Wahid.
+      </h1>
+      <p class="mt-6 max-w-xl text-lg text-ink-500 leading-relaxed">
+        Développeur web et designer. Je conçois des interfaces simples,
+        élégantes et performantes, centrées sur l'essentiel.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a href="#projects" class="px-6 py-3 rounded-full bg-ink-900 text-white text-sm font-medium hover:bg-ink-700 transition">
+          Voir mes projets
+        </a>
+        <a href="#contact" class="px-6 py-3 rounded-full border border-ink-200 text-sm font-medium hover:border-ink-900 transition">
+          Prendre contact
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== À propos ===== -->
+  <section id="about" class="py-24 border-t border-ink-100">
+    <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-3 gap-12">
+      <div>
+        <p class="text-sm uppercase tracking-[0.2em] text-ink-500">01 — À propos</p>
+        <h2 class="mt-3 text-3xl font-semibold tracking-tight">Qui suis-je</h2>
+      </div>
+      <div class="md:col-span-2 space-y-5 text-ink-700 leading-relaxed">
+        <p>
+          Passionné par le développement web et le design, je conçois des sites
+          et applications modernes alliant esthétique épurée et performance.
+        </p>
+        <p>
+          Mon approche est minimaliste&nbsp;: chaque élément doit avoir une raison
+          d'être. J'aime les typographies soignées, les espaces généreux et les
+          interactions discrètes.
+        </p>
+        <div class="grid grid-cols-3 gap-6 pt-6 border-t border-ink-100">
+          <div>
+            <div class="text-3xl font-semibold">3+</div>
+            <div class="text-sm text-ink-500 mt-1">Années d'expérience</div>
+          </div>
+          <div>
+            <div class="text-3xl font-semibold">20+</div>
+            <div class="text-sm text-ink-500 mt-1">Projets réalisés</div>
+          </div>
+          <div>
+            <div class="text-3xl font-semibold">15+</div>
+            <div class="text-sm text-ink-500 mt-1">Clients satisfaits</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Compétences ===== -->
+  <section id="skills" class="py-24 border-t border-ink-100 bg-ink-50">
+    <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-3 gap-12">
+      <div>
+        <p class="text-sm uppercase tracking-[0.2em] text-ink-500">02 — Compétences</p>
+        <h2 class="mt-3 text-3xl font-semibold tracking-tight">Stack technique</h2>
+      </div>
+      <div class="md:col-span-2 grid sm:grid-cols-2 gap-x-10 gap-y-6">
+        <div>
+          <div class="flex justify-between text-sm mb-2">
+            <span class="font-medium">HTML & CSS</span><span class="text-ink-500">95%</span>
+          </div>
+          <div class="h-px bg-ink-200"><div class="bar h-px bg-ink-900" style="width:95%"></div></div>
+        </div>
+        <div>
+          <div class="flex justify-between text-sm mb-2">
+            <span class="font-medium">JavaScript</span><span class="text-ink-500">88%</span>
+          </div>
+          <div class="h-px bg-ink-200"><div class="bar h-px bg-ink-900" style="width:88%"></div></div>
+        </div>
+        <div>
+          <div class="flex justify-between text-sm mb-2">
+            <span class="font-medium">React</span><span class="text-ink-500">80%</span>
+          </div>
+          <div class="h-px bg-ink-200"><div class="bar h-px bg-ink-900" style="width:80%"></div></div>
+        </div>
+        <div>
+          <div class="flex justify-between text-sm mb-2">
+            <span class="font-medium">UI / UX Design</span><span class="text-ink-500">85%</span>
+          </div>
+          <div class="h-px bg-ink-200"><div class="bar h-px bg-ink-900" style="width:85%"></div></div>
+        </div>
+        <div>
+          <div class="flex justify-between text-sm mb-2">
+            <span class="font-medium">Node.js</span><span class="text-ink-500">75%</span>
+          </div>
+          <div class="h-px bg-ink-200"><div class="bar h-px bg-ink-900" style="width:75%"></div></div>
+        </div>
+        <div>
+          <div class="flex justify-between text-sm mb-2">
+            <span class="font-medium">Tailwind CSS</span><span class="text-ink-500">92%</span>
+          </div>
+          <div class="h-px bg-ink-200"><div class="bar h-px bg-ink-900" style="width:92%"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Projets ===== -->
+  <section id="projects" class="py-24 border-t border-ink-100">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex items-end justify-between flex-wrap gap-4 mb-12">
+        <div>
+          <p class="text-sm uppercase tracking-[0.2em] text-ink-500">03 — Projets</p>
+          <h2 class="mt-3 text-3xl font-semibold tracking-tight">Sélection récente</h2>
+        </div>
+        <a href="#" class="text-sm text-ink-500 hover:text-ink-900 transition">Voir tout →</a>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-x-8 gap-y-12">
+        <a href="#" class="group block">
+          <div class="aspect-[4/3] bg-ink-100 rounded-sm overflow-hidden">
+            <div class="w-full h-full bg-gradient-to-br from-ink-200 to-ink-100 group-hover:scale-105 transition-transform duration-500"></div>
+          </div>
+          <div class="mt-4 flex items-start justify-between">
+            <div>
+              <h3 class="font-medium">Plateforme E-commerce</h3>
+              <p class="text-sm text-ink-500 mt-1">Web — 2025</p>
+            </div>
+            <span class="text-ink-500 group-hover:translate-x-1 transition-transform">→</span>
+          </div>
+        </a>
+
+        <a href="#" class="group block">
+          <div class="aspect-[4/3] bg-ink-100 rounded-sm overflow-hidden">
+            <div class="w-full h-full bg-gradient-to-br from-ink-900 to-ink-700 group-hover:scale-105 transition-transform duration-500"></div>
+          </div>
+          <div class="mt-4 flex items-start justify-between">
+            <div>
+              <h3 class="font-medium">Dashboard analytique</h3>
+              <p class="text-sm text-ink-500 mt-1">Application — 2025</p>
+            </div>
+            <span class="text-ink-500 group-hover:translate-x-1 transition-transform">→</span>
+          </div>
+        </a>
+
+        <a href="#" class="group block">
+          <div class="aspect-[4/3] bg-ink-100 rounded-sm overflow-hidden">
+            <div class="w-full h-full bg-gradient-to-br from-ink-100 to-ink-200 group-hover:scale-105 transition-transform duration-500"></div>
+          </div>
+          <div class="mt-4 flex items-start justify-between">
+            <div>
+              <h3 class="font-medium">Site portfolio</h3>
+              <p class="text-sm text-ink-500 mt-1">Web — 2024</p>
+            </div>
+            <span class="text-ink-500 group-hover:translate-x-1 transition-transform">→</span>
+          </div>
+        </a>
+
+        <a href="#" class="group block">
+          <div class="aspect-[4/3] bg-ink-100 rounded-sm overflow-hidden">
+            <div class="w-full h-full bg-gradient-to-br from-ink-700 to-ink-500 group-hover:scale-105 transition-transform duration-500"></div>
+          </div>
+          <div class="mt-4 flex items-start justify-between">
+            <div>
+              <h3 class="font-medium">Application mobile</h3>
+              <p class="text-sm text-ink-500 mt-1">Mobile — 2024</p>
+            </div>
+            <span class="text-ink-500 group-hover:translate-x-1 transition-transform">→</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section id="contact" class="py-24 border-t border-ink-100 bg-ink-50">
+    <div class="max-w-3xl mx-auto px-6">
+      <p class="text-sm uppercase tracking-[0.2em] text-ink-500">04 — Contact</p>
+      <h2 class="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight">Travaillons ensemble.</h2>
+      <p class="mt-4 text-ink-500 max-w-xl">
+        Une idée, un projet ou simplement envie d'échanger&nbsp;? Envoyez-moi un message.
+      </p>
+
+      <form id="contactForm" class="mt-10 space-y-6" novalidate>
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <label for="name" class="block text-xs uppercase tracking-wider text-ink-500 mb-2">Nom</label>
+            <input type="text" id="name" name="name"
+                   class="w-full bg-transparent border-b border-ink-200 py-2 text-ink-900 placeholder-ink-500 focus:outline-none focus:border-ink-900 transition" />
+            <small class="error block mt-1 text-xs text-red-500" data-for="name"></small>
+          </div>
+          <div>
+            <label for="email" class="block text-xs uppercase tracking-wider text-ink-500 mb-2">Email</label>
+            <input type="email" id="email" name="email"
+                   class="w-full bg-transparent border-b border-ink-200 py-2 text-ink-900 placeholder-ink-500 focus:outline-none focus:border-ink-900 transition" />
+            <small class="error block mt-1 text-xs text-red-500" data-for="email"></small>
+          </div>
+        </div>
+        <div>
+          <label for="subject" class="block text-xs uppercase tracking-wider text-ink-500 mb-2">Sujet</label>
+          <input type="text" id="subject" name="subject"
+                 class="w-full bg-transparent border-b border-ink-200 py-2 text-ink-900 placeholder-ink-500 focus:outline-none focus:border-ink-900 transition" />
+          <small class="error block mt-1 text-xs text-red-500" data-for="subject"></small>
+        </div>
+        <div>
+          <label for="message" class="block text-xs uppercase tracking-wider text-ink-500 mb-2">Message</label>
+          <textarea id="message" name="message" rows="5"
+                    class="w-full bg-transparent border-b border-ink-200 py-2 text-ink-900 placeholder-ink-500 focus:outline-none focus:border-ink-900 transition resize-none"></textarea>
+          <small class="error block mt-1 text-xs text-red-500" data-for="message"></small>
+        </div>
+
+        <button type="submit"
+                class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-ink-900 text-white text-sm font-medium hover:bg-ink-700 transition">
+          Envoyer le message
+          <span aria-hidden="true">→</span>
+        </button>
+
+        <p id="formSuccess" class="hidden text-sm text-emerald-600 pt-2">
+          Merci&nbsp;! Votre message a bien été envoyé.
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="border-t border-ink-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-wrap items-center justify-between gap-4 text-sm text-ink-500">
+      <p>© <span id="year"></span> Said Wahid.</p>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-ink-900 transition">GitHub</a>
+        <a href="#" class="hover:text-ink-900 transition">LinkedIn</a>
+        <a href="#" class="hover:text-ink-900 transition">Twitter</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
